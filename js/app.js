@@ -30,9 +30,10 @@ this.title = ko.computed(function(){
 }
 //alert('The first element is ' + myObservableArray()[0]);
 var ViewModel = function() {
-        this.currentCat = ko.observable( new Cat() );
-	this.incrementCounter = function() {
-            this.currentCat().clickCount(this.currentCat().clickCount() +1);
+	var self = this;
+	this.currentCat = ko.observable( new Cat() );
+	self.incrementCounter = function() {
+            self.currentCat().clickCount(self.currentCat().clickCount() +1);
 	};
 }
 ko.applyBindings(new ViewModel());
